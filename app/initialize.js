@@ -1,5 +1,5 @@
-import test from './js/test'
+import map from './js/map'
 
 document.addEventListener('DOMContentLoaded', () => {
-	// inits go here
+	map.drawMap()
 });
