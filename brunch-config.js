@@ -2,7 +2,6 @@
 exports.files = {
   javascripts: {
     joinTo: {
-      'vendor.js': /^(?!app)/, // Files that are not in `app` dir.
       'app.js': /^app/
     }
   },
@@ -10,5 +9,8 @@ exports.files = {
 };
 
 exports.plugins = {
-  babel: {presets: ['latest']}
+  babel: {
+  	presets: ['latest'],
+  	ignore: '/node_modules/'
+  }
 };
