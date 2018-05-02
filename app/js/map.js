@@ -2,20 +2,20 @@ import ol from 'openlayers'
 
 class Map {
 
+  constructor() {
+    this.layer = 'https://onxcluster4.onxmaps.com/arcgis/rest/services/1ParcelCoverage/ParcelCoverage/MapServer'
+    this.basemap = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: 'https://tiles.production.onxmaps.com/topo/global/{z}/{x}/{y}.png'
+      })
+    })
+  }
+
 	drawMap() {
-		console.log('drawing')
-
 		var map = new ol.Map({
-      // layers: [
-      //   // basemaps
-      //   layers.basemaps.topoGlobal,
-      //   layers.basemaps.topoUs,
-
-      //   // overlays - apply counties and then states on top
-      //   layers.overlays.counties.chipLayer,
-      //   layers.overlays.counties.appLayer,
-      //   layers.overlays.states
-      // ],
+      layers: [
+        this.basemap
+      ],
       target: 'map',
       view: new ol.View({
         maxZoom: 22,
